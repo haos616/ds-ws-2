@@ -80,3 +80,27 @@ Running migrations:
   Applying auth.0008_alter_user_username_max_length... OK
   Applying sessions.0001_initial... OK
 ```
+
+```bash
+$ docker-compose build postgres
+Building postgres
+Step 1 : FROM postgres:9.6.2
+ ---> ecd991538a0f
+Step 2 : ADD backup.sh /usr/local/bin/backup
+ ---> Using cache
+ ---> 53cec657dcdc
+Step 3 : ADD restore.sh /usr/local/bin/restore
+ ---> Using cache
+ ---> 52347b8359c9
+Step 4 : ADD list-backups.sh /usr/local/bin/list-backups
+ ---> Using cache
+ ---> e1e2aa203f86
+Step 5 : RUN chmod +x /usr/local/bin/restore     && chmod +x /usr/local/bin/list-backups     && chmod +x /usr/local/bin/backup
+ ---> Using cache
+ ---> f66b7b0ac699
+Step 6 : VOLUME /backups
+ ---> Using cache
+ ---> 40181a60a1b2
+Successfully built 40181a60a1b2
+```
+

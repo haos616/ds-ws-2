@@ -5,16 +5,19 @@ services:
   django:
     image: ${HUB_HOST}/${COMPOSE_PROJECT_NAME}/django:${PROJECT_VERSION}
     command: python manage.py runserver 0.0.0.0:8000
+    environment:
+      - API_MIGRATE=True
+      - API_DATABASE_URL=psql://api:api@postgres:5432/api_db
     build:
       context: ..
-      dockerfile: ./docker/services/django/Dockerfile
+      dockerfile: ./docker/images/django/Dockerfile
     volumes:
       - '../api:/code'
     ports:
       - '127.0.0.1:8000:8000'
   postgres:
     image: ${HUB_HOST}/${COMPOSE_PROJECT_NAME}/postgres:${PROJECT_VERSION}
-    build: ./services/postgres
+    build: ./images/postgres
     environment:
       - POSTGRES_DB=api_db
       - POSTGRES_USER=api
