@@ -24,3 +24,11 @@ Successfully installed django-1.10.5
 Removing intermediate container eb505d6a7efe
 Successfully built 784301a9fcd8
 ```
+
+```bash
+$ mkdir api
+$ docker-compose run --rm django django-admin startproject ws2 /code
+$ id user
+uid=1000(user) gid=1000(user) groups=1000(user),24(cdrom),25(floppy),29(audio),30(dip),44(video),46(plugdev),108(netdev),110(lpadmin),113(scanner),118(bluetooth),999(docker)
+$ docker-compose run --rm django chown 1000:1000 /code -R
+```
