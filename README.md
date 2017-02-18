@@ -44,3 +44,19 @@ $ id user
 uid=1000(user) gid=1000(user) groups=1000(user),24(cdrom),25(floppy),29(audio),30(dip),44(video),46(plugdev),108(netdev),110(lpadmin),113(scanner),118(bluetooth),999(docker)
 $ docker-compose run --rm django chown 1000:1000 /code -R
 ```
+
+```bash
+$ docker-compose up
+Recreating ws2_django_1
+Attaching to ws2_django_1
+django_1  | Performing system checks...
+django_1  | 
+django_1  | System check identified no issues (0 silenced).
+django_1  | 
+django_1  | You have 13 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+django_1  | Run 'python manage.py migrate' to apply them.
+django_1  | February 18, 2017 - 09:32:19
+django_1  | Django version 1.10.5, using settings 'ws2.settings'
+django_1  | Starting development server at http://0.0.0.0:8000/
+django_1  | Quit the server with CONTROL-C.
+```
