@@ -114,3 +114,11 @@ Removing ws2_django_run_1 ... done
 Removing network ws2_default
 Removing volume ws2_postgres_data
 ```
+
+```
+django_1    |     conn = _connect(dsn, connection_factory=connection_factory, async=async)
+django_1    | django.db.utils.OperationalError: could not connect to server: Connection refused
+django_1    | 	Is the server running on host "postgres" (172.25.0.2) and accepting
+django_1    | 	TCP/IP connections on port 5432?
+django_1    | 
+```
