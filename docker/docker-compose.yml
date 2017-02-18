@@ -1,4 +1,6 @@
 version: '2'
+volumes:
+  postgres_data: {}
 services:
   django:
     image: ${HUB_HOST}/${COMPOSE_PROJECT_NAME}/django:${PROJECT_VERSION}
@@ -10,3 +12,12 @@ services:
       - '../api:/code'
     ports:
       - '127.0.0.1:8000:8000'
+  postgres:
+    image: ${HUB_HOST}/${COMPOSE_PROJECT_NAME}/postgres:${PROJECT_VERSION}
+    build: ./services/postgres
+    environment:
+      - POSTGRES_DB=api_db
+      - POSTGRES_USER=api
+      - POSTGRES_PASSWORD=api
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
