@@ -2,6 +2,8 @@ version: '2'
 services:
   django:
     image: ${HUB_HOST}/${COMPOSE_PROJECT_NAME}/django:${PROJECT_VERSION}
-    build: ./services/django
+    build:
+      context: ..
+      dockerfile: ./docker/services/django/Dockerfile
     volumes:
       - '../api:/code'

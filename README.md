@@ -1,28 +1,40 @@
 ```bash
+$ docker-compose config
+networks: {}
+services:
+  django:
+    build:
+      context: /home/haos/myprojects/ds-ws-2/ds-ws-2
+      dockerfile: ./docker/services/django/Dockerfile
+    image: hub.haos616.com/ws2/django:dev
+    volumes:
+    - /home/haos/myprojects/ds-ws-2/ds-ws-2/api:/code:rw
+version: '2.0'
+volumes: {}
+```
+
+```bash
 $ cd docker
 $ docker-compose build django
 Building django
 Step 1 : FROM python:3.5.3
-3.5.3: Pulling from library/python
-5040bd298390: Already exists
-fce5728aad85: Already exists
-76610ec20bf5: Already exists
-9c1bc3c30371: Pull complete
-e4b99677d005: Pull complete
-639fdf1f74a8: Pull complete
-17fa6c425d9b: Pull complete
-Digest: sha256:fb303377b7bfa9796d077152ec84e3e9ace396b4d88e2c63d426542cf968a4e9
-Status: Downloaded newer image for python:3.5.3
  ---> b0d7fc8a7ace
-Step 2 : RUN pip install django==1.10.5
- ---> Running in eb505d6a7efe
-Collecting django==1.10.5
+Step 2 : RUN mkdir /code
+ ---> Running in 223fdd708b1f
+ ---> 915c3167c347
+Removing intermediate container 223fdd708b1f
+Step 3 : ADD ./api/requirements /code/requirements
+ ---> 7780d02e74fc
+Removing intermediate container 637e9e08bc07
+Step 4 : RUN pip install -r /code/requirements/dev.txt
+ ---> Running in d4c6cc020315
+Collecting django<1.11,>=1.10 (from -r /code/requirements/base.txt (line 1))
   Downloading Django-1.10.5-py2.py3-none-any.whl (6.8MB)
 Installing collected packages: django
 Successfully installed django-1.10.5
- ---> 784301a9fcd8
-Removing intermediate container eb505d6a7efe
-Successfully built 784301a9fcd8
+ ---> 5c269e8cd736
+Removing intermediate container d4c6cc020315
+Successfully built 5c269e8cd736
 ```
 
 ```bash
