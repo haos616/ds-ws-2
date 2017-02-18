@@ -104,3 +104,13 @@ Step 6 : VOLUME /backups
 Successfully built 40181a60a1b2
 ```
 
+```bash
+$ docker-compose down -v
+Removing ws2_django_1 ... done
+Removing ws2_postgres_1 ... done
+Removing ws2_django_run_3 ... done
+Removing ws2_django_run_2 ... done
+Removing ws2_django_run_1 ... done
+Removing network ws2_default
+Removing volume ws2_postgres_data
+```
