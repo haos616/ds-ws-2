@@ -299,3 +299,7 @@ Deleted api_db database
 Creating new database api_db
 Restoring database api_db
 ```
+
+```bash
+$ docker-compose logs -f
+```
