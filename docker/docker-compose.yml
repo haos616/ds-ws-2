@@ -8,6 +8,7 @@ services:
     environment:
       - API_MIGRATE=True
       - API_DATABASE_URL=psql://api:api@postgres:5432/api_db
+      - API_WAIT=True
     build:
       context: ..
       dockerfile: ./docker/images/django/Dockerfile

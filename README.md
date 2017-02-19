@@ -143,3 +143,124 @@ haos@Dark:~/myprojects/ds-ws-2/ds-ws-2/docker$ /etc/init.d/docker restart
 # service docker restart
 ```
 
+```bash
+$ docker-compose up
+Creating network "ws2_default" with the default driver
+Creating volume "ws2_postgres_data" with default driver
+Creating ws2_postgres_1
+Creating ws2_django_1
+Attaching to ws2_postgres_1, ws2_django_1
+postgres_1  | The files belonging to this database system will be owned by user "postgres".
+postgres_1  | This user must also own the server process.
+django_1    | Waiting creating postgres database
+postgres_1  | 
+postgres_1  | The database cluster will be initialized with locale "en_US.utf8".
+postgres_1  | The default database encoding has accordingly been set to "UTF8".
+postgres_1  | The default text search configuration will be set to "english".
+postgres_1  | 
+postgres_1  | Data page checksums are disabled.
+postgres_1  | 
+postgres_1  | fixing permissions on existing directory /var/lib/postgresql/data ... ok
+postgres_1  | creating subdirectories ... ok
+postgres_1  | selecting default max_connections ... 100
+postgres_1  | selecting default shared_buffers ... 128MB
+postgres_1  | selecting dynamic shared memory implementation ... posix
+postgres_1  | creating configuration files ... ok
+postgres_1  | running bootstrap script ... ok
+postgres_1  | performing post-bootstrap initialization ... ok
+django_1    | /usr/local/lib/python3.5/site-packages/environ/environ.py:608: UserWarning: /code/ws2/.env doesn't exist - if you're not configuring your environment separately, create one.
+django_1    |   "environment separately, create one." % env_file)
+django_1    | Waiting creating postgres database
+django_1    | /usr/local/lib/python3.5/site-packages/environ/environ.py:608: UserWarning: /code/ws2/.env doesn't exist - if you're not configuring your environment separately, create one.
+django_1    |   "environment separately, create one." % env_file)
+django_1    | Waiting creating postgres database
+django_1    | /usr/local/lib/python3.5/site-packages/environ/environ.py:608: UserWarning: /code/ws2/.env doesn't exist - if you're not configuring your environment separately, create one.
+django_1    |   "environment separately, create one." % env_file)
+django_1    | Waiting creating postgres database
+django_1    | /usr/local/lib/python3.5/site-packages/environ/environ.py:608: UserWarning: /code/ws2/.env doesn't exist - if you're not configuring your environment separately, create one.
+django_1    |   "environment separately, create one." % env_file)
+django_1    | Waiting creating postgres database
+django_1    | /usr/local/lib/python3.5/site-packages/environ/environ.py:608: UserWarning: /code/ws2/.env doesn't exist - if you're not configuring your environment separately, create one.
+django_1    |   "environment separately, create one." % env_file)
+django_1    | Waiting creating postgres database
+postgres_1  | syncing data to disk ... ok
+postgres_1  | 
+postgres_1  | Success. You can now start the database server using:
+postgres_1  | 
+postgres_1  |     pg_ctl -D /var/lib/postgresql/data -l logfile start
+postgres_1  | 
+postgres_1  | 
+postgres_1  | WARNING: enabling "trust" authentication for local connections
+postgres_1  | You can change this by editing pg_hba.conf or using the option -A, or
+postgres_1  | --auth-local and --auth-host, the next time you run initdb.
+postgres_1  | waiting for server to start....LOG:  database system was shut down at 2017-02-19 09:39:11 UTC
+django_1    | /usr/local/lib/python3.5/site-packages/environ/environ.py:608: UserWarning: /code/ws2/.env doesn't exist - if you're not configuring your environment separately, create one.
+django_1    |   "environment separately, create one." % env_file)
+postgres_1  | LOG:  MultiXact member wraparound protections are now enabled
+postgres_1  | LOG:  database system is ready to accept connections
+postgres_1  | LOG:  autovacuum launcher started
+django_1    | Waiting creating postgres database
+postgres_1  |  done
+postgres_1  | server started
+django_1    | /usr/local/lib/python3.5/site-packages/environ/environ.py:608: UserWarning: /code/ws2/.env doesn't exist - if you're not configuring your environment separately, create one.
+django_1    |   "environment separately, create one." % env_file)
+django_1    | Waiting creating postgres database
+django_1    | /usr/local/lib/python3.5/site-packages/environ/environ.py:608: UserWarning: /code/ws2/.env doesn't exist - if you're not configuring your environment separately, create one.
+django_1    |   "environment separately, create one." % env_file)
+django_1    | Waiting creating postgres database
+postgres_1  | CREATE DATABASE
+postgres_1  | 
+postgres_1  | CREATE ROLE
+postgres_1  | 
+postgres_1  | 
+postgres_1  | /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+postgres_1  | 
+postgres_1  | LOG:  received fast shutdown request
+postgres_1  | waiting for server to shut down....LOG:  aborting any active transactions
+postgres_1  | LOG:  autovacuum launcher shutting down
+postgres_1  | LOG:  shutting down
+postgres_1  | LOG:  database system is shut down
+django_1    | /usr/local/lib/python3.5/site-packages/environ/environ.py:608: UserWarning: /code/ws2/.env doesn't exist - if you're not configuring your environment separately, create one.
+django_1    |   "environment separately, create one." % env_file)
+django_1    | Waiting creating postgres database
+postgres_1  |  done
+postgres_1  | server stopped
+postgres_1  | 
+postgres_1  | PostgreSQL init process complete; ready for start up.
+postgres_1  | 
+postgres_1  | LOG:  database system was shut down at 2017-02-19 09:39:24 UTC
+postgres_1  | LOG:  MultiXact member wraparound protections are now enabled
+postgres_1  | LOG:  database system is ready to accept connections
+postgres_1  | LOG:  autovacuum launcher started
+django_1    | /usr/local/lib/python3.5/site-packages/environ/environ.py:608: UserWarning: /code/ws2/.env doesn't exist - if you're not configuring your environment separately, create one.
+django_1    |   "environment separately, create one." % env_file)
+django_1    | /usr/local/lib/python3.5/site-packages/environ/environ.py:608: UserWarning: /code/ws2/.env doesn't exist - if you're not configuring your environment separately, create one.
+django_1    |   "environment separately, create one." % env_file)
+django_1    | Operations to perform:
+django_1    |   Apply all migrations: admin, auth, contenttypes, sessions
+django_1    | Running migrations:
+django_1    |   Applying contenttypes.0001_initial... OK
+django_1    |   Applying auth.0001_initial... OK
+django_1    |   Applying admin.0001_initial... OK
+django_1    |   Applying admin.0002_logentry_remove_auto_add... OK
+django_1    |   Applying contenttypes.0002_remove_content_type_name... OK
+django_1    |   Applying auth.0002_alter_permission_name_max_length... OK
+django_1    |   Applying auth.0003_alter_user_email_max_length... OK
+django_1    |   Applying auth.0004_alter_user_username_opts... OK
+django_1    |   Applying auth.0005_alter_user_last_login_null... OK
+django_1    |   Applying auth.0006_require_contenttypes_0002... OK
+django_1    |   Applying auth.0007_alter_validators_add_error_messages... OK
+django_1    |   Applying auth.0008_alter_user_username_max_length... OK
+django_1    |   Applying sessions.0001_initial... OK
+django_1    | /usr/local/lib/python3.5/site-packages/environ/environ.py:608: UserWarning: /code/ws2/.env doesn't exist - if you're not configuring your environment separately, create one.
+django_1    |   "environment separately, create one." % env_file)
+django_1    | /usr/local/lib/python3.5/site-packages/environ/environ.py:608: UserWarning: /code/ws2/.env doesn't exist - if you're not configuring your environment separately, create one.
+django_1    |   "environment separately, create one." % env_file)
+django_1    | Performing system checks...
+django_1    | 
+django_1    | System check identified no issues (0 silenced).
+django_1    | February 19, 2017 - 09:39:29
+django_1    | Django version 1.10.5, using settings 'ws2.settings'
+django_1    | Starting development server at http://0.0.0.0:8000/
+django_1    | Quit the server with CONTROL-C.
+```
