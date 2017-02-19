@@ -47,7 +47,7 @@ else echo "Database $POSTGRES_DB does not exist, continue"
 fi
 
 # create a new database
-echo "Creating new database $POSTGRES_USER"
+echo "Creating new database $POSTGRES_DB"
 createdb -h $POSTGRES_HOST -U $POSTGRES_USER $POSTGRES_DB -O $POSTGRES_USER
 
 # restore the database
