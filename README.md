@@ -122,3 +122,24 @@ django_1    | 	Is the server running on host "postgres" (172.25.0.2) and accepti
 django_1    | 	TCP/IP connections on port 5432?
 django_1    | 
 ```
+
+```bash
+$ docker-compose down -v
+Removing ws2_django_1 ... error
+Removing ws2_postgres_1 ... error
+
+ERROR: for ws2_postgres_1  Driver aufs failed to remove root filesystem 8c17aeadbf6c3039be11203995b934148bb0eddb6692185cd66a6bd344276449: rename /var/lib/docker/aufs/mnt/80357318e32fd2137f68b4346a59d5d4b583d755fc6030606920dfaa748bcfdd /var/lib/docker/aufs/mnt/80357318e32fd2137f68b4346a59d5d4b583d755fc6030606920dfaa748bcfdd-removing: device or resource busy
+
+ERROR: for ws2_django_1  Driver aufs failed to remove root filesystem fb40b21494b3332924bd6d5ebb763e303912980b3fca93472b692d964235256c: rename /var/lib/docker/aufs/mnt/139e24f2df5d79ee2cdb1bf3dacb15f3eb08da83be93b273f995ff3bebb3c8b7 /var/lib/docker/aufs/mnt/139e24f2df5d79ee2cdb1bf3dacb15f3eb08da83be93b273f995ff3bebb3c8b7-removing: device or resource busy
+Removing network ws2_default
+Removing volume ws2_postgres_data
+ERROR: Unable to remove volume, volume still in use: remove ws2_postgres_data: volume is in use - [8c17aeadbf6c3039be11203995b934148bb0eddb6692185cd66a6bd344276449]
+haos@Dark:~/myprojects/ds-ws-2/ds-ws-2/docker$ /etc/init.d/docker restart
+[....] Restarting docker (via systemctl): docker.serviceFailed to restart docker.service: Access denied
+ failed!
+```
+
+```bash
+# service docker restart
+```
+
