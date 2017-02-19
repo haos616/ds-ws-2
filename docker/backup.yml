@@ -1,0 +1,13 @@
+version: '2'
+services:
+  postgres_backup:
+    extends:
+      file: docker-compose.yml
+      service: postgres
+    command: backup
+    environment:
+      - POSTGRES_HOST=postgres
+    volumes:
+      - './backups:/backups'
+    depends_on:
+      - postgres

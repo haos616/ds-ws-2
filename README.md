@@ -264,3 +264,38 @@ django_1    | Django version 1.10.5, using settings 'ws2.settings'
 django_1    | Starting development server at http://0.0.0.0:8000/
 django_1    | Quit the server with CONTROL-C.
 ```
+
+```bash
+$ docker-compose -f docker-compose.yml -f backup.yml run --rm postgres_backup
+Starting ws2_postgres_1
+Creating folders /backups/2017/02/19
+Creating backup /backups/2017/02/19/2017-02-19T09:48:55.psql.gz
+Successfully created backup /backups/2017/02/19/2017-02-19T09:48:55.psql.gz
+```
+
+```bash
+$ docker-compose -f docker-compose.yml -f backup.yml run --rm postgres_backup list-backups
+Listing dirs
+/backups
+/backups/2017
+/backups/2017/02
+/backups/2017/02/19
+```
+
+```bash
+$ docker-compose -f docker-compose.yml -f backup.yml run --rm postgres_backup list-backups /backups/2017/02/19
+Listing available backups
+/backups/2017/02/19/2017-02-19T09:48:14.psql.gz
+/backups/2017/02/19/2017-02-19T09:48:55.psql.gz
+/backups/2017/02/19/2017-02-19T09:49:41.psql.gz
+/backups/2017/02/19/2017-02-19T09:49:54.psql.gz
+```
+
+```bash
+$ docker-compose -f docker-compose.yml -f backup.yml run --rm postgres_backup restore /backups/2017/02/19/2017-02-19T09:48:14.psql.gz
+Beginning restore from /backups/2017/02/19/2017-02-19T09:48:14.psql.gz
+Deleting old database api_db
+Deleted api_db database
+Creating new database api
+Restoring database api_db
+```
