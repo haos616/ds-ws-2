@@ -296,6 +296,6 @@ $ docker-compose -f docker-compose.yml -f backup.yml run --rm postgres_backup re
 Beginning restore from /backups/2017/02/19/2017-02-19T09:48:14.psql.gz
 Deleting old database api_db
 Deleted api_db database
-Creating new database api
+Creating new database api_db
 Restoring database api_db
 ```
