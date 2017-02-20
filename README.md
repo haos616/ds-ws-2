@@ -303,3 +303,17 @@ Restoring database api_db
 ```bash
 $ docker-compose logs -f
 ```
+
+```bash
+django_sshd_1  | user:root container:ws2_django_1 password:docker
+```
+
+```bash
+$ docker-compose down -v
+Removing network ws2_default
+WARNING: Network ws2_default not found.
+Removing volume ws2_postgres_data
+ERROR: Unable to remove volume, volume still in use: remove ws2_postgres_data: volume is in use - [8f4fe1b0e79aee39593716e50000fa76405dbff4d4c8c36a76dec600daedc87c, c13642f253016d24793a121d1f29b8795df76aee9c7c034af43ea3791bd96437, 8ad8f8ab2ca89d203d8747278ae4020a81fcc4c1afec715c503373fc12126f11]
+```
+
+Need remove container 8f4fe1b0e79aee39593716e50000fa76405dbff4d4c8c36a76dec600daedc87c
