@@ -317,3 +317,6 @@ ERROR: Unable to remove volume, volume still in use: remove ws2_postgres_data: v
 ```
 
 Need remove container 8f4fe1b0e79aee39593716e50000fa76405dbff4d4c8c36a76dec600daedc87c
+
+# Solution permission problem 
+[link](https://denibertovic.com/posts/handling-permissions-with-docker-volumes/)
