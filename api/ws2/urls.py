@@ -20,5 +20,5 @@ from core.views import TimeAPIView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^api/v1/time', TimeAPIView.as_view()),
+    url(r'^api/v1/time', TimeAPIView.as_view(), name='api-time'),
 ]
