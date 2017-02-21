@@ -22,6 +22,7 @@ services:
     depends_on:
       - postgres
       - redis
+      - mailhog
   celery_worker:
     image: ${HUB_HOST}/${COMPOSE_PROJECT_NAME}/django:${PROJECT_VERSION}
     command: celery worker -A ws2.celery_app -l debug
@@ -51,3 +52,7 @@ services:
     image: redis:3.2.8
     volumes:
       - redis_data:/data
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - "127.0.0.1:8025:8025"
