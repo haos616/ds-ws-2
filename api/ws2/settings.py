@@ -132,4 +132,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-
+CELERY_BROKER_URL = env(get_env_name('CELERY_BROKER_URL'), default='redis://localhost:6379/1')
+CELERY_RESULT_BACKEND = env(get_env_name('CELERY_RESULT_BACKEND'), default='redis://localhost:6379/1')
