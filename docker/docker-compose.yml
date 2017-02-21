@@ -30,6 +30,9 @@ services:
       - API_WAIT=True
       - API_CELERY_BROKER_URL=redis://redis:6379/1
       - API_CELERY_RESULT_BACKEND=redis://redis:6379/1
+      - CELERY_RDB_HOST=0.0.0.0
+    ports:
+      - '127.0.0.1:6899-6910:6899-6910'
     volumes:
       - '../api:/code'
     depends_on:
