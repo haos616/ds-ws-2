@@ -1,5 +1,4 @@
 from celery import shared_task
-from celery.contrib import rdb
 
 from django.core.mail import send_mail
 
