@@ -16,6 +16,9 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+from core.views import TimeAPIView
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^api/v1/time', TimeAPIView.as_view()),
 ]
