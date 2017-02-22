@@ -3,7 +3,7 @@ from celery import Celery
 
 # set the default Django settings module for the 'celery' program.
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ws2.settings')
-from django.conf import settings  # noqa
+# from django.conf import settings  # noqa
 
 app = Celery('ws2')
 
@@ -14,8 +14,7 @@ app = Celery('ws2')
 app.config_from_object('django.conf:settings', namespace='CELERY')
 
 # Load task modules from all registered Django app configs.
-app.autodiscover_tasks(lambda: settings.INSTALLED_APPS)
-# app.autodiscover_tasks()
+app.autodiscover_tasks()
 
 
 @app.task(bind=True)

@@ -25,7 +25,7 @@ services:
       - mailhog
   celery_worker:
     image: ${HUB_HOST}/${COMPOSE_PROJECT_NAME}/django:${PROJECT_VERSION}
-    command: celery worker -A ws2.celery_app -l debug
+    command: celery worker -A celery_app -l debug
     environment:
       - API_DATABASE_URL=psql://api:api@postgres:5432/api_db
       - API_WAIT=True
