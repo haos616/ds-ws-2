@@ -37,7 +37,7 @@ SECRET_KEY = 'mn#yr_l%p+#f9+cx-rbvpy6my^0y)on9q8lqr41(*cp^g3t69f'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -130,7 +130,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/s/'
 
 CELERY_BROKER_URL = env(get_env_name('CELERY_BROKER_URL'), default='redis://localhost:6379/1')
 CELERY_RESULT_BACKEND = env(get_env_name('CELERY_RESULT_BACKEND'), default='redis://localhost:6379/1')
