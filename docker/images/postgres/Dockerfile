@@ -18,4 +18,6 @@ RUN chmod +x /usr/local/bin/restore \
 # Add script create extension
 #ADD ./create-extension.sh /docker-entrypoint-initdb.d/create-extension.sh
 
+ADD ./docker-entrypoint.sh /scripts/docker-entrypoint.sh
+
 VOLUME /backups

@@ -7,6 +7,8 @@ services:
     command: backup
     environment:
       - POSTGRES_HOST=postgres
+      - LOCAL_USER_ID=${LOCAL_USER_ID}
+    entrypoint: /scripts/docker-entrypoint.sh
     volumes:
       - './backups:/backups'
     depends_on:
